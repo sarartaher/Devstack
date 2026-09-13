@@ -8,7 +8,7 @@ const Hero = () => {
         <div className="hero-left lg:flex flex-col gap-8 max-sm:container max-sm:flex-col max-sm:justify-items-center max-sm:text-center">
           <h1 className="text-6xl font-semibold max-sm:text-5xl">
             Build Your Ideal <br />{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF512F] via-[#DD2476] to-[#7F00FF]">
+            <span className="brand-gradient-text">
               Development Stack{" "}
             </span>{" "}
           </h1>
@@ -18,7 +18,7 @@ const Hero = () => {
             <br /> next project.
           </p>
           <div className="hero-button flex gap-4.5 font-semibold max-sm: py-4 ">
-            <button className="text-white bg-gradient-to-r from-[#FF512F] via-[#DD2476] to-[#7F00FF] px-3.5 py-1.5 rounded-md ">
+            <button className="text-white brand-gradient px-3.5 py-1.5 rounded-md ">
               Explore Technologies
             </button>
             <button className=" outline-gray-300 outline-[1px] px-7.5 py-1.5 rounded-md">
