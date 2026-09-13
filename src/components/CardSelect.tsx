@@ -5,10 +5,9 @@ interface CardSelectProps {
   stack: TechTypeProps[];
   onRemove: (id: string) => void;
   onRemoveAll: () => void;
-  onAdd:()=> void;
 }
 
-const CardSelect = ({ stack, onRemove, onRemoveAll, onAdd }: CardSelectProps) => {
+const CardSelect = ({ stack, onRemove, onRemoveAll }: CardSelectProps) => {
   const count = stack.length;
 
   return (
@@ -23,7 +22,6 @@ const CardSelect = ({ stack, onRemove, onRemoveAll, onAdd }: CardSelectProps) =>
       </div>
 
       {count === 0 ? (
-        
         <div className="mt-6 flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-zinc-200 px-4 py-12 text-center">
           <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-100 text-slate-400">
             <FiPackage className="h-7 w-7" />

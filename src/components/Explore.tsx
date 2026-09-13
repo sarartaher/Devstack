@@ -11,13 +11,13 @@ const Explore = ({ fetchdata }: ExploreTypeProps) => {
   const [stack, setStack] = useState<TechTypeProps[]>([]);
 
   const handleAdd = (tech: TechTypeProps) => {
-  if (stack.some((item) => item.id === tech.id)) {
-    toast.warn(`${tech.name} is already in your stack!`);
-    return;
-  }
-  setStack((item) => [...item, tech]);
-  toast.success(`${tech.name} added to your stack!`);
-};
+    if (stack.some((item) => item.id === tech.id)) {
+      toast.warn(`${tech.name} is already in your stack!`);
+      return;
+    }
+    setStack((item) => [...item, tech]);
+    toast.success(`${tech.name} added to your stack!`);
+  };
 
   const handleRemove = (id: string) => {
     const removed = stack.find((item) => item.id === id);
@@ -32,7 +32,7 @@ const Explore = ({ fetchdata }: ExploreTypeProps) => {
   };
   return (
     <>
-      <div className="Explore-section container mx-auto my-3.5">
+      <div className="Explore-section container mx-auto my-3.5" id="explore">
         <div>
           <div className="max-sm:flex-col max-sm:justify-items-center">
             <h1 className="text-5xl font-semibold max-sm:text-4xl">
@@ -49,8 +49,8 @@ const Explore = ({ fetchdata }: ExploreTypeProps) => {
           <div className="cards flex gap-6 mx-auto container max-sm:flex-col max-sm:justify-items-center">
             {data && data.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
-                {data.map((stack) => (
-                  <Card key={stack.id} {...stack} />
+                {data.map((tech) => (
+                  <Card key={tech.id} {...tech} onAdd={handleAdd} isAdded={stack.some((item)=>item.id === tech.id)} />
                 ))}
               </div>
             ) : (
@@ -59,10 +59,10 @@ const Explore = ({ fetchdata }: ExploreTypeProps) => {
               </p>
             )}
             <CardSelect
-            stack={stack}
-          onRemove={handleRemove}
-          onRemoveAll={handleRemoveAll}
-          onAdd={handleAdd} />
+              stack={stack}
+              onRemove={handleRemove}
+              onRemoveAll={handleRemoveAll}
+            />
           </div>
         </div>
         <div className="divider w-[30px] h-1 my-10 mx-auto bg-gray-200"></div>
