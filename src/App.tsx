@@ -13,19 +13,7 @@ const fetchData = async () => {
 };
 
 const App = () => {
-  const [tech, setTech] = useState<TechTypeProps[]>([]);
-  const [selectedCard, setSelectedCard] = useState<TechTypeProps[]>([]);
-
-  const handleAddStack = (tech: TechTypeProps) => {
-    const ex = selectedCard.find((item) => item.id === tech.id)
-      ? toast.warn(`${tech.name} is already your stack`, {
-          position: "top-right",
-        })
-      : setSelectedCard((item) => [...item, tech]);
-    toast.success(`${tech.name} is already your stack`, {
-      position: "top-right",
-    });
-  };
+  
 
   return (
     <>

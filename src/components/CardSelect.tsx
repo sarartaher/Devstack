@@ -5,9 +5,10 @@ interface CardSelectProps {
   stack: TechTypeProps[];
   onRemove: (id: string) => void;
   onRemoveAll: () => void;
+  onAdd:()=> void;
 }
 
-const CardSelect = ({ stack, onRemove, onRemoveAll }: CardSelectProps) => {
+const CardSelect = ({ stack, onRemove, onRemoveAll, onAdd }: CardSelectProps) => {
   const count = stack.length;
 
   return (

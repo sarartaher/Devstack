@@ -1,4 +1,5 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
+import { toast } from "react-toastify";
 import Card from "./Card";
 import CardSelect from "./CardSelect";
 import type { TechTypeProps } from "../types/TechTypeProps";
@@ -6,6 +7,29 @@ import type { ExploreTypeProps } from "../types/ExploreTypeProps";
 
 const Explore = ({ fetchdata }: ExploreTypeProps) => {
   const data = use(fetchdata);
+
+  const [stack, setStack] = useState<TechTypeProps[]>([]);
+
+  const handleAdd = (tech: TechTypeProps) => {
+  if (stack.some((item) => item.id === tech.id)) {
+    toast.warn(`${tech.name} is already in your stack!`);
+    return;
+  }
+  setStack((item) => [...item, tech]);
+  toast.success(`${tech.name} added to your stack!`);
+};
+
+  const handleRemove = (id: string) => {
+    const removed = stack.find((item) => item.id === id);
+    setStack((prev) => prev.filter((item) => item.id !== id));
+    if (removed) toast.info(`${removed.name} removed from your stack.`);
+  };
+
+  const handleRemoveAll = () => {
+    if (stack.length === 0) return;
+    setStack([]);
+    toast.info("Your stack has been cleared.");
+  };
   return (
     <>
       <div className="Explore-section container mx-auto my-3.5">
@@ -34,7 +58,11 @@ const Explore = ({ fetchdata }: ExploreTypeProps) => {
                 No technologies found.
               </p>
             )}
-            <CardSelect />
+            <CardSelect
+            stack={stack}
+          onRemove={handleRemove}
+          onRemoveAll={handleRemoveAll}
+          onAdd={handleAdd} />
           </div>
         </div>
         <div className="divider w-[30px] h-1 my-10 mx-auto bg-gray-200"></div>
