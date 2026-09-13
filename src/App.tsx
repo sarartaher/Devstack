@@ -1,10 +1,9 @@
-import React, { Suspense, useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
+import React, { Suspense} from "react";
+import { ToastContainer } from "react-toastify";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Explore from "./components/Explore";
 import Footer from "./components/Footer";
-import type { TechTypeProps } from "./types/TechTypeProps";
 
 const fetchData = async () => {
   const res = await fetch("/Data.json");
