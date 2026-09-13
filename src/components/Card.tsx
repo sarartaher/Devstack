@@ -1,12 +1,11 @@
-import React from "react";
 import type { TechTypeProps } from "../types/TechTypeProps";
 
-interface CardTypeProps extends TechTypeProps{
+interface CardTypeProps extends TechTypeProps {
   onAdd: (tech: TechTypeProps) => void;
   isAdded: boolean;
 }
 
-const Card = ({onAdd, isAdded, ...item}:CardTypeProps) => {
+const Card = ({ onAdd, isAdded, ...item }: CardTypeProps) => {
   return (
     <>
       <div className="flex w-full max-w-[360px] flex-col justify-between rounded-3xl border border-zinc-100 bg-white p-6 shadow-sm transition-all hover:shadow-md max-sm:max-w-lg">
@@ -55,17 +54,17 @@ const Card = ({onAdd, isAdded, ...item}:CardTypeProps) => {
           </div>
         </div>
         <button
-        type="button"
-        disabled={isAdded}
-        onClick={() => onAdd(item)}
-        className={`mt-6 w-full rounded-xl py-3 text-sm font-semibold transition-colors duration-150 active:scale-[0.99] ${
-          isAdded
-            ? "bg-slate-200 text-slate-500 cursor-not-allowed"
-            : "bg-[#0b0f19] text-white hover:bg-slate-800"
-        }`}
-      >
-        {isAdded ? "✓ Added to Stack" : "Add to Stack"}
-      </button>
+          type="button"
+          disabled={isAdded}
+          onClick={() => onAdd(item)}
+          className={`mt-6 w-full rounded-xl py-3 text-sm font-semibold transition-colors duration-150 active:scale-[0.99] ${
+            isAdded
+              ? "bg-slate-200 text-slate-500 cursor-not-allowed"
+              : "bg-[#0b0f19] text-white hover:bg-slate-800"
+          }`}
+        >
+          {isAdded ? "✓ Added to Stack" : "Add to Stack"}
+        </button>
       </div>
     </>
   );

@@ -1,4 +1,3 @@
-import React from "react";
 import Logo from "../assets/logo-text.png";
 const Footer = () => {
   return (
@@ -10,7 +9,6 @@ const Footer = () => {
             Curated tools, technologies, and resources for developers building
             <br />
             modern software.
-            
           </p>
           <div className="links flex gap-3 font-semibold">
             <a href="">GitHub</a>
@@ -19,13 +17,17 @@ const Footer = () => {
           </div>
         </aside>
         <nav className="max-sm:hidden">
-          <h6 className="uppercase text-md text-black font-semibold">Product</h6>
+          <h6 className="uppercase text-md text-black font-semibold">
+            Product
+          </h6>
           <a className="link link-hover">Home</a>
           <a className="link link-hover">Technologies</a>
           <a className="link link-hover">Projects</a>
         </nav>
         <nav className="max-sm:hidden">
-          <h6 className="uppercase text-md text-black font-semibold">Company</h6>
+          <h6 className="uppercase text-md text-black font-semibold">
+            Company
+          </h6>
           <a className="link link-hover">About</a>
           <a className="link link-hover">Contact</a>
           <a className="link link-hover">Careers</a>
@@ -36,16 +38,14 @@ const Footer = () => {
           <a className="link link-hover">Terms of use</a>
         </nav>
       </footer>
-        <div className=" container mx-auto divider my-3 max-sm:my-0"></div>
-        <div className="credential container mx-auto flex justify-between items-center py-4 max-sm:justify-evenly">
-            <div className="left">
-                &copy;2026DevStack. All Rights reserved.
-            </div>
-            <div className="terms flex gap-3 mr-3.5">
-                <p className="link link-hover">Privacy</p>
-                <p className="link link-hover">Terms</p>
-            </div>
+      <div className=" container mx-auto divider my-3 max-sm:my-0"></div>
+      <div className="credential container mx-auto flex justify-between items-center py-4 max-sm:justify-evenly">
+        <div className="left">&copy;2026DevStack. All Rights reserved.</div>
+        <div className="terms flex gap-3 mr-3.5">
+          <p className="link link-hover">Privacy</p>
+          <p className="link link-hover">Terms</p>
         </div>
+      </div>
     </>
   );
 };

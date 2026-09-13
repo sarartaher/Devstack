@@ -1,4 +1,3 @@
-import React from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Logo from "../assets/logo-text.png";
 
@@ -8,7 +7,7 @@ const Navbar = () => {
       <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white shadow-sm">
         <nav className="container mx-auto flex items-center justify-between px-6 py-4 ">
           <div className="hamburger  md:hidden ">
-            <RxHamburgerMenu className="h-10"/>
+            <RxHamburgerMenu className="h-10" />
           </div>
           <div className="logo">
             <img src={Logo} alt="" className="h-10 " />

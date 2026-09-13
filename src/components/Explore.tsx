@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import { use, useState } from "react";
 import { toast } from "react-toastify";
 import Card from "./Card";
 import CardSelect from "./CardSelect";

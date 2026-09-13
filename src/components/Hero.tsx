@@ -1,4 +1,3 @@
-import React from "react";
 import banner from "../assets/banner-stack.png";
 
 const Hero = () => {
@@ -8,9 +7,7 @@ const Hero = () => {
         <div className="hero-left lg:flex flex-col gap-8 max-sm:container max-sm:flex-col max-sm:justify-items-center max-sm:text-center">
           <h1 className="text-6xl font-semibold max-sm:text-5xl">
             Build Your Ideal <br />{" "}
-            <span className="brand-gradient-text">
-              Development Stack{" "}
-            </span>{" "}
+            <span className="brand-gradient-text">Development Stack </span>{" "}
           </h1>
           <p className="text-[#475569] text-xl">
             Explore frontend, backend, database, and tooling options, <br />{" "}
